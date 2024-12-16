@@ -18,7 +18,7 @@ const Footer = () => {
           {/* logo */}
           <div className='w-[300px] mb-8 xl:mb-0'>
             <Link href='/'>
-              <Image src='/logo.svg' width={90} height={36} alt='' />
+              <Image src='/jangkar_biru.svg' width={90} height={36} alt='' />
             </Link>
           </div>
           {/* grid items */}
@@ -97,7 +97,7 @@ const Footer = () => {
         {/* copyright text */}
         <div className='py-4 border-t border-white/10'>
           <p className='text-white/60 text-center text-sm'>
-            Copyright &copy; W'Food 2023
+            Copyright &copy; Jangkar Restaurant 2023
           </p>
         </div>
       </div>

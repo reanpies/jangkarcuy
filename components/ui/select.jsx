@@ -98,7 +98,6 @@ SelectContent.displayName = SelectPrimitive.Content.displayName;
 const SelectLabel = React.forwardRef(({ className, ...props }, ref) => (
   <SelectPrimitive.Label
     ref={ref}
-<<<<<<< HEAD
     className={cn('py-1.5 pl-8 pr-2 text-sm font-semibold', className)}
     {...props}
   />
@@ -126,47 +125,15 @@ const SelectItem = React.forwardRef(
   )
 );
 SelectItem.displayName = SelectPrimitive.Item.displayName;
-=======
-    className={cn("py-1.5 pl-8 pr-2 text-sm font-semibold", className)}
-    {...props} />
-))
-SelectLabel.displayName = SelectPrimitive.Label.displayName
-
-const SelectItem = React.forwardRef(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Item
-    ref={ref}
-    className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-slate-100 focus:text-slate-900 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-800 dark:focus:text-slate-50",
-      className
-    )}
-    {...props}>
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-      <SelectPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
-      </SelectPrimitive.ItemIndicator>
-    </span>
-
-    <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
-  </SelectPrimitive.Item>
-))
-SelectItem.displayName = SelectPrimitive.Item.displayName
->>>>>>> b3d4aaeba88f38466291f23e626294803af89007
 
 const SelectSeparator = React.forwardRef(({ className, ...props }, ref) => (
   <SelectPrimitive.Separator
     ref={ref}
-<<<<<<< HEAD
     className={cn('-mx-1 my-1 h-px bg-slate-100 dark:bg-slate-800', className)}
     {...props}
   />
 ));
 SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
-=======
-    className={cn("-mx-1 my-1 h-px bg-slate-100 dark:bg-slate-800", className)}
-    {...props} />
-))
-SelectSeparator.displayName = SelectPrimitive.Separator.displayName
->>>>>>> b3d4aaeba88f38466291f23e626294803af89007
 
 export {
   Select,
@@ -179,8 +146,4 @@ export {
   SelectSeparator,
   SelectScrollUpButton,
   SelectScrollDownButton,
-<<<<<<< HEAD
 };
-=======
-}
->>>>>>> b3d4aaeba88f38466291f23e626294803af89007

@@ -59,6 +59,12 @@ module.exports = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      colors: {
+        border: "hsl(var(--border))", // Define `border` color from the CSS variable
+      },
+      borderColor: {
+        border: "hsl(var(--border))", // Create `border-border` utility
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
