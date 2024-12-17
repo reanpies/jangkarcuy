@@ -82,13 +82,13 @@ const Footer = () => {
               <h4 className='font-semibold mb-5'>Socials</h4>
               <ul className='flex flex-col gap-y-6 text-sm'>
                 <li>
-                  <Link href='/'>Youtube</Link>
+                  <Link href='/'>restojangkar@yahoo.com</Link>
                 </li>
                 <li>
-                  <Link href='/'>Facebook</Link>
+                  <Link href='https://www.facebook.com/managret'>Facebook</Link>
                 </li>
                 <li>
-                  <Link href='/'>Instagram</Link>
+                  <Link href='https://www.instagram.com/explore/locations/435165596569539/restoran-jangkar'>Instagram</Link>
                 </li>
               </ul>
             </div>
