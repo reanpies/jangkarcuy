@@ -23,7 +23,7 @@ const Hero = () => {
               viewport={{ once: false, amount: 0.4 }}
               className='text-white mb-7'
             >
-              A taste of local <br /> flavours
+              Jangkar <br /> Restaurant
             </motion.h1>
             <motion.p
               variants={fadeIn('down', 0.4)}
@@ -32,7 +32,7 @@ const Hero = () => {
               viewport={{ once: false, amount: 0.4 }}
               className='text-white font-semibold mb-7'
             >
-              by: <span className='text-orange'>Kelompok Jangkar</span>
+              by: <span className='text-orange'>Kelompok 2</span>
             </motion.p>
             <motion.p
               variants={fadeIn('down', 0.6)}
