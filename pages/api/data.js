@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     const db = client.db('Jangkar'); // nama database
 
     const aboutComponent = await db.collection('components').findOne({ name: 'about' }); // nama komponen
-    const menuItems = await db.collection('menu').find({}).toArray();
+    const menuItems = await db.collection('components').findOne({ name: 'menu' });
 
     res.status(200).json({
       aboutText: aboutComponent?.text || '',

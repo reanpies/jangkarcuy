@@ -1,10 +1,32 @@
-const menu = [
-    { img: '/menu/ayam_panggang.png', title: 'Ayam Panggang', price: 'Rp. 50,000' },
-    { img: '/menu/capcay_goreng.png', title: 'Capcay Goreng', price: 'Rp. 40,000' },
-    { img: '/menu/fuyunghai.png', title: 'Fuyunghai', price: 'Rp. 45,000' },
-    { img: '/menu/nasi_tim.png', title: 'Nasi Tim', price: 'Rp. 30,000' },
-  ];
-  
-export default function handler(req, res) {
-  res.status(200).json(menu);
+import prisma from '../../lib/prisma';
+
+export default async function handler(req, res) {
+  console.log("API /api/menu called");
+  if (req.method === 'GET') {
+    try {
+
+      console.log('Fetching menu data from MongoDB...');
+
+      const menuDoc = await prisma.menu.findFirst({
+        where: { name: 'menu' },
+      });
+
+      console.log('Menu document:', menuDoc);
+
+      if (!menuDoc) {
+        console.error('No document found for menu');
+        return res.status(404).json({ error: 'No menu data found' });
+      }
+      
+      const menuItems = Array.isArray(menuDoc?.items) ? menuDoc.items : [];
+      res.status(200).json(menuItems);
+
+    } catch (error) {
+      console.error('Error in /api/menu:', error.message); // Log error message
+      console.error('Error stack:', error.stack); // Log stack trace
+      res.status(500).json({ error: 'Failed to fetch menu items' });
+    }
+  } else {
+    res.status(405).json({ message: 'Method not allowed' });
+  }
 }

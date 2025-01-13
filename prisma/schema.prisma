@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI") // Pastikan sudah ada di .env.local
+}
+
+model MenuItem {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  items     Json
+  name      String
+
+  @@map("components")
+}
+
+model Admin {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  email    String @unique
+  password String
+
+  @@map("admins")
+}
