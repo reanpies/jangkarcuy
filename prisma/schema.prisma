@@ -4,15 +4,23 @@ generator client {
 
 datasource db {
   provider = "mongodb"
-  url      = env("MONGODB_URI") // Pastikan sudah ada di .env.local
+  url      = env("MONGODB_URI")
 }
 
-model MenuItem {
+model Component {
   id        String @id @default(auto()) @map("_id") @db.ObjectId
-  items     Json
   name      String
+  data      Json?
 
   @@map("components")
+}
+
+model Menu {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  items     Json
+
+  @@map("menu")
 }
 
 model Admin {

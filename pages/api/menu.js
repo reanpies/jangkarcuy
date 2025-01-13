@@ -13,8 +13,8 @@ export default async function handler(req, res) {
 
       console.log('Menu document:', menuDoc);
 
-      if (!menuDoc) {
-        console.error('No document found for menu');
+      if (!menuDoc || !menuDoc.items) {
+        console.error('No valid menu document found');
         return res.status(404).json({ error: 'No menu data found' });
       }
       
@@ -27,6 +27,7 @@ export default async function handler(req, res) {
       res.status(500).json({ error: 'Failed to fetch menu items' });
     }
   } else {
-    res.status(405).json({ message: 'Method not allowed' });
+    res.setHeader('Allow', ['GET']);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
